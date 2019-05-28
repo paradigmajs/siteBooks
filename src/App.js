@@ -1,26 +1,45 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Somepage from './components/somepage'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { connect } from 'react-redux';
+import {BrowserRouter, Route, Link} from 'react-router-dom'
+// рекомендовано
+import createBrowserHistory from 'history/createBrowserHistory'
+
+const history = createBrowserHistory();
+
+const Home = ()=>( <h1>Home</h1> )
+class App extends React.Component {
+  render(){
+    return(
+      <BrowserRouter history={history}>
+        <div>
+          <ul>
+            <li>
+              <Link to="/"></Link>
+            </li>
+            <li>
+              <Link to="/somepage">somepage</Link>
+            </li>
+            <li>
+              <Link to="/"></Link>
+            </li>
+          </ul>  
+        </div>
+
+        <hr/>
+
+        <Route exact path = "/" component={Home} />
+        <Route path = "/somepage" component={Somepage} />
+
+      </BrowserRouter>
+    )
+  }
 }
+
+
+
 
 export default App;
