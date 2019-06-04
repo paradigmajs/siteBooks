@@ -3,15 +3,23 @@ import logo from './logo.svg';
 import './App.css';
 import Somepage from './components/somepage'
 import Banner from './components/Banner';
-import bannerSecond from './components/bannerSecond';
+import BannerSecond from './components/BannerSecond.js';
+import BannerThird from './components/BannerThird';
 import { connect } from 'react-redux';
 import {BrowserRouter, Route, Link} from 'react-router-dom'
 // рекомендовано
 import createBrowserHistory from 'history/createBrowserHistory'
+import BannerFourth from './components/BannerFourth';
+import BannerFifth from './components/BannerFifth';
+
+
+
+
 
 const history = createBrowserHistory();
 
 const Home = ()=>( <h1>Home</h1> )
+
 class App extends React.Component {
   render(){
     return(
@@ -23,7 +31,46 @@ class App extends React.Component {
           </h1>
           </header>
           <Banner/>
-          <bannerSecond/>
+          <BannerSecond/>
+          <BannerThird name={this.props.name}/>
+          
+          <BannerFourth name2={this.props.name2}/>
+          <BannerFifth/>
+         
+         <footer id="footer">
+      <ul className="icons">
+          <li>
+              <a href="#" className="icon alt fa-twitter">
+                  <span className="label">Twitter</span>
+              </a>
+          </li>
+          <li>
+              <a href="#" className="icon alt fa-facebook">
+                <span className="label">Facebook</span>
+              </a>
+          </li>
+          <li>
+              <a href="#" className="icon alt fa-linkedin">
+                <span className="label">LinkedIn</span>
+              </a>
+          </li>
+          <li>
+              <a href="#" className="icon alt fa-instagram">
+                <span className="label">Instagram</span>
+              </a>
+          </li>
+          <li>
+              <a href="#" className="icon alt fa-github">
+                <span className="label">GitHub</span>
+              </a>
+          </li>
+          <li>
+              <a href="#" className="icon alt fa-envelope">
+                <span className="label">Email</span>
+              </a>
+          </li>
+      </ul>
+    </footer>
         </div>
         <hr/>
 
@@ -32,5 +79,12 @@ class App extends React.Component {
     )
   }
 }
+function mapStateToProps(state){
+  return{
+    name: state.Info.firstBook.name,
+    name2: state.Info.secondBook.name 
+  } 
+}
 
-export default App;
+
+export default connect(mapStateToProps)(App);
