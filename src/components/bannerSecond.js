@@ -1,19 +1,48 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import ReactWOW from 'react-wow';
 
-export default class bannerSecond extends Component {
+
+class BannerSecond extends Component {
   render() {
     return (
-      <section id="banner">
-					<div className="content">
-						<header>
-							<h2>The future has landed</h2>
-							<p>And there are no hoverboards or flying cars.<br />
-							Just apps. Lots of mother flipping apps.</p>
-						</header>
-						<span className="image"><img src="images/pic01.jpg" alt="" /></span>
-					</div>
-					<a href="#one" className="goto-next scrolly">Next</a>
-				</section>
-    )
-  }
+      <ReactWOW animation='fadeInUp'>
+      <section id="one" className="spotlight style1 bottom">  
+      <div className="content">
+        <div className="container">
+          <div className="row">
+            <div className="col-4 col-12-medium">
+              <header>
+                <h2>Владимир Валентинович Базюкин</h2>
+                <p>Родился в 1954 году в Подмосковье. На данный момент проживает в городе Бишкек</p>
+              </header>
+            </div>
+            <div className="col-4 col-12-medium">
+              <p>По образованию востоковед-филолог. В 1976 году окончил Институт стран Азии и Африки при МГУ им. М.В. Ломоносова по специальности амхарский язык и литература (Эфиопия). 
+                Работал устным и письменным переводчиком в различных учреждениях г. Севастополь и г. Душанбе (Отдел философии Академии наук Таджикской ССР и к/с "Таджикфильм"). 
+                Несколько лет работал переводчиком амхарского и английского языков в Эфиопии.
+              С 2012 года сотрудничает с Американским Теософским обществом (The Theosophical Society, International Headquarters, Pasadena, California). 
+              Результатом этого стала публикация на сайте ТО переводов произведений американского теософа Г. де Пурукера (статьи "История об Иисусе" и "Четыре священных времени года").</p>
+            </div>
+            <div className="col-4 col-12-medium">
+              <p>Результатом этого стала публикация на сайте ТО переводов произведений американского теософа Г. де Пурукера (статьи "История об Иисусе" и "Четыре священных времени года").
+                Однако главным содержанием этого сотрудничества стали перевод и публикация на сайте ТО "Тайной доктрины" Е.П. Блаватской (проект пока не завершён).
+                  В 2016 году издательством "Дельфис" (г. Москва) был опубликован сокращённый перевод I и II томов сочинения                  
+                  Г.С. Олкотта "Страницы старого дневника" ("Old Diary Leaves").
+                  В следующем, 2017 году в том же издательстве вышел в свет перевод первого тома "Тайной доктрины" Е.П.
+                  Блаватской. 
+                  В настоящее время готовится к изданию второй том "Тайной доктрины".</p>
+           
+            
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#two" className="goto-next scrolly">Next</a>
+    </section>
+    </ReactWOW>
+  );
 }
+};
+
+
+export default BannerSecond;
